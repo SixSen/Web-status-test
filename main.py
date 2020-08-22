@@ -72,27 +72,5 @@ if __name__ == '__main__':
     work_book = xlrd.open_workbook('网址列表.xlsx')
     sheet_1 = work_book.sheet_by_name('Sheet1')
     # 读取一整列的数据
-
-    # row_data = sheet_1.row_values(1)  
-    # print(row_data[5])  
-
     lie = [str(sheet_1.cell_value(i, 2)) for i in range(1, sheet_1.nrows)]
     urls(lie)
-    # r = requests.get(url, timeout=5)
-    #
-    # r.encoding = 'utf-8'
-    # code = r.status_code
-    # html = BeautifulSoup(r.text)
-    # s = html.title.string
-    # print(s)
-    # if code == 200:
-    #     print("网站访问正常")
-    #     sys.exit(0)
-    # else:
-    #     print("不能访问 Error:", code)
-
-    # file = open('test.txt')
-    # lines = file.readlines()
-    # print('开始检查：\nurl\t标题')
-    # urls(lines)
-    # file.close()
