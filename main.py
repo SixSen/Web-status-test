@@ -69,7 +69,7 @@ def urls(lines):
 
 
 if __name__ == '__main__':
-    work_book = xlrd.open_workbook('D:/识别网页情况/企业网址列表.xlsx')
+    work_book = xlrd.open_workbook('网址列表.xlsx')
     sheet_1 = work_book.sheet_by_name('Sheet1')
     # 读取一整列的数据
 
