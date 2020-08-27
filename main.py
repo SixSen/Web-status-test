@@ -11,10 +11,11 @@ from bs4 import BeautifulSoup
 # 判断是否能访问；获取标题；进行报错处理
 def exception(url):
     try:
-        headers = {
+        s = requests.Session()
+        s.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                           'Chrome/79.0.3945.88 Safari/537.36'}
-        r = requests.get(url=url, headers=headers, timeout=10)
+        r = s.get(url=url, timeout=10)
         if r.apparent_encoding == 'utf-8':
             r.encoding = 'utf-8'
         time.sleep(0.01)
